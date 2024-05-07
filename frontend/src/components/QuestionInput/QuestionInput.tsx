@@ -11,9 +11,11 @@ interface Props {
     placeholder?: string;
     clearOnSend?: boolean;
     conversationId?: string;
+    isVisible:boolean;
+    hidevisible: () => void;
 }
 
-export const QuestionInput = ({ onSend, disabled, placeholder, clearOnSend, conversationId }: Props) => {
+export const QuestionInput = ({ onSend, disabled, placeholder, clearOnSend, conversationId,isVisible ,hidevisible}: Props) => {
     const [question, setQuestion] = useState<string>("");
 
   const sendQuestion = () => {
@@ -33,10 +35,10 @@ export const QuestionInput = ({ onSend, disabled, placeholder, clearOnSend, conv
     };
 
     
-    const [isVisible, setIsVisible] = useState(true);
 
+    
     const handleButtonClick = () => {
-      setIsVisible(false);
+        hidevisible();
     }
       
     const onEnterPress = (ev: React.KeyboardEvent<Element>) => {

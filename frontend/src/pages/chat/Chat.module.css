@@ -486,6 +486,189 @@ a {
     cursor: pointer;
 }
 
+@media only screen  and  (max-width: 1536px) {
+   
+    .chatEmptyStateIcon{
+
+        position: absolute;
+        top: 45px;
+        left: -20px;
+        bottom: 152px;
+        height: 48px
+      }
+
+    
+
+   .chatEmptyStateTitle{
+    margin-top: -52px;
+
+}
+.faqstackli, .faqstackup {
+    margin-bottom: -8px;
+}
+.faqstacklefttext{
+    top: -60px;
+        right: 572px;
+}
+.faqstackrightup{
+    top: -59px;
+    right: 10px;
+
+}
+
+
+}
+
+@media only screen and  (max-width: 1278px) {
+   
+    .chatEmptyStateIcon{
+        position: absolute;
+        top: 45px;
+        left: -20px;
+        bottom: 152px;
+        height: 48px;
+    }
+
+    .faqstackli, .faqstackup{
+        margin-top: -3px;
+        font-size: 13px;
+}
+.faqstacklefttext{
+    top: -33px;
+        right: 538px;
+}
+.faqstackrightup{
+        top: -30px;
+        right: -5px;
+
+}
+
+}
+@media only screen and  (max-width: 1027px) {
+   
+   
+    
+.faqstacklefttext{
+    top: -33px;
+        right: 286px;
+}
+.faqstackrightup{
+    top: -30px;
+        right: -79px;
+
+}
+
+}
+@media only screen and  (max-width: 1024px) {
+   
+    .chatEmptyStateIcon{
+        position: absolute;
+        top: 45px;
+        left: -20px;
+        bottom: 152px;
+        height: 48px;
+    }
+
+    .faqstackli, .faqstackup{
+        margin-top: -3px;
+        font-size: 13px;
+    }
+.faqstacklefttext{
+    top: -33px;
+        right: 280px;
+}
+.faqstackrightup{
+    top: -30px;
+        right: -82px;
+
+}
+
+}
+
+@media only screen  and (max-width: 768px)  {
+   
+    .chatEmptyStateIcon{
+        position: absolute;
+        top: 57px;
+        left: -20px;
+        bottom: 152px;
+        height: 35px;
+    }
+
+    .faqstackli, .faqstackup{
+        margin-top: -2px;
+        font-size: 10px;
+}
+.faqstacklefttext{
+    top: -27px;
+    right: 40px;
+}
+.faqstackrightup{
+    top: -26px;
+    right: -217px;
+
+}
+.buttonstack{
+    left: 23px;
+     
+}
+.buttoncontainer
+{
+    
+    width: 100%;
+}
+.questionInputContainer
+{
+    width: 464px;
+    height: 103px;
+}
+
+}
+
+@media only screen and  (max-width: 640px)  {
+   
+    .chatEmptyStateIcon{
+        position: absolute;
+        top: 57px;
+        left: -20px;
+        bottom: 152px;
+        height: 35px;
+    }
+
+    .faqstackli, .faqstackup{
+        margin-top: 1px;
+        font-size: 9px;
+}
+.faqstacklefttext{
+    top: -29px;
+    right: -86px;
+}
+.faqstackrightup{
+    top: -30px;
+    right: -303px;
+
+}
+.buttonstack{
+    left: -43px;
+       top: -120px;
+}
+.buttoncontainer
+{
+    row-gap: 47px;
+    column-gap: 9px;
+    width: 132%;
+}
+.questionInputContainer
+{
+    left: 2%;
+    top: 32%;
+    bottom: 0%;
+    width: 375px;
+    height: 106px;
+}
+
+}
+
 
 @media only screen and (max-width: 480px) {
    
@@ -566,76 +749,12 @@ a {
 }
 }
 
-/* Medium devices (tablets) */
-@media only screen and (min-width: 481px) and (max-width: 1024px) {
-   
-    .chatEmptyStateIcon{
-        position: absolute;
-        top: 45px;
-        left: -20px;
-        bottom: 152px;
-        height: 48px;
-    }
 
-    .faqstackli, .faqstackup{
-        margin-top: -3px;
-        font-size: 13px;
-}
-.faqstacklefttext{
-    top: -33px;
-        right: 280px;
-}
-.faqstackrightup{
-    top: -30px;
-        right: -82px;
 
-}
-.questionInputContainer {
-    left: 2%;
-    right: 0%;
-    top: 13%;
-    bottom: 0%;
-    background: #FFFFFF;
-    box-shadow: 0 8px 16px #00000024, 0 0 2px #0000001f;
-    border-radius: 8px;
-    width: 600px;
 
-}
-}
 
-/* Medium devices (tablets) */
-@media only screen and (min-width: 1025px) and (max-width: 1250px) {
-   
-    .chatEmptyStateIcon{
-        position: absolute;
-        top: 45px;
-        left: -20px;
-        bottom: 152px;
-        height: 48px;
-    }
 
-    .faqstackli, .faqstackup{
-        margin-top: -3px;
-        font-size: 13px;
-}
-.faqstacklefttext{
-    top: -33px;
-        right: 500px;
-}
-.faqstackrightup{
-    top: -30px;
-        right: -5px;
 
-}
-.questionInputContainer {
-    left: 2%;
-    right: 0%;
-    top: 13%;
-    bottom: 0%;
-    background: #FFFFFF;
-    box-shadow: 0 8px 16px #00000024, 0 0 2px #0000001f;
-    border-radius: 8px;
-    width: 725px;
 
-}
-}
+
+

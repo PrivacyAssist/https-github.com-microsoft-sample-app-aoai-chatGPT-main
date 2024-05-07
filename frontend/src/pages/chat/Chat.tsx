@@ -104,6 +104,10 @@ const Chat = () => {
             setErrorMsg(null)
         }, 500);
     }
+    const handlevisble = () => {
+    
+       setIsVisible(false);
+    }
 
     useEffect(() => {
         setIsLoading(appStateContext?.state.chatHistoryLoadingState === ChatHistoryLoadingState.Loading)
@@ -502,8 +506,12 @@ const Chat = () => {
 
     }
 
+    const [isVisible, setIsVisible] = useState(true);
+
     const clearChat = async () => {
         setClearingChat(true)
+        setIsVisible(true)
+
         if (appStateContext?.state.currentChat?.id && appStateContext?.state.isCosmosDBAvailable.cosmosDB) {
             let response = await historyClear(appStateContext?.state.currentChat.id)
             if (!response.ok) {
@@ -524,6 +532,7 @@ const Chat = () => {
     };
 
     const newChat = () => {
+        setIsVisible(true)
         setProcessMessages(messageStatus.Processing)
         setMessages([])
         setIsCitationPanelOpen(false);
@@ -813,12 +822,14 @@ const Chat = () => {
                                     appStateContext?.state.isCosmosDBAvailable?.cosmosDB ? makeApiRequestWithCosmosDB(question, id) : makeApiRequestWithoutCosmosDB(question, id)
                                 }}
                                 conversationId={appStateContext?.state.currentChat?.id ? appStateContext?.state.currentChat?.id : undefined}
-                            />
+                                isVisible ={isVisible}
+                                hidevisible={handlevisble}
+                          />
                         </Stack>
                     </div>
                     {/* Citation Panel */}
                     {messages && messages.length > 0 && isCitationPanelOpen && activeCitation && (
-                        <Stack.Item className={styles.citationPanel} tabIndex={0} role="tabpanel" aria-label="Citations Panel">
+                        <Stack.Item className={styles.citationPanel} style={{float:'right'}} tabIndex={0} role="tabpanel" aria-label="Citations Panel">
                             <Stack aria-label="Citations Panel Header Container" horizontal className={styles.citationPanelHeaderContainer} horizontalAlign="space-between" verticalAlign="center">
                                 <span aria-label="Citations" className={styles.citationPanelHeader}>Citations</span>
                                 <IconButton iconProps={{ iconName: 'Cancel' }} aria-label="Close citations panel" onClick={() => setIsCitationPanelOpen(false)} />
