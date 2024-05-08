@@ -65,7 +65,6 @@ export const QuestionInput = ({ onSend, disabled, placeholder, clearOnSend, conv
 
               <div className={styles.buttoncontainer}>
  
-
              <button className={styles.custombutton}  onClick={()=>{onSend('How do I intiate a finance privacy review','');handleButtonClick();}}>
                   <span className={styles.line}><strong>How do I intiate </strong> </span>
                   <span className={styles.Subline}>a finance privacy review </span>

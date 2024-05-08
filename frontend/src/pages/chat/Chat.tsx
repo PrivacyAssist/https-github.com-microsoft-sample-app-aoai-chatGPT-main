@@ -726,6 +726,7 @@ const Chat = () => {
                                         )}
                                     </>
                                 ))}
+                                
                                 {showLoadingMessage && (
                                     <>
                                         <div className={styles.chatMessageGpt}>
