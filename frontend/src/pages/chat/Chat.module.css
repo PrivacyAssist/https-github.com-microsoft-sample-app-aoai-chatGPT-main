@@ -486,39 +486,228 @@ a {
     cursor: pointer;
 }
 
-@media only screen  and  (max-width: 1536px) {
+@media only screen  and  (max-width: 1400px) {
    
     .chatEmptyStateIcon{
-
         position: absolute;
         top: 45px;
         left: -20px;
         bottom: 152px;
-        height: 48px
-      }
+        height: 48px;
+    }
 
-    
-
-   .chatEmptyStateTitle{
-    margin-top: -52px;
-
+    .faqstackli{
+        margin-top: -4px;
+        font-size: 13px;
 }
-.faqstackli, .faqstackup {
-    margin-bottom: -8px;
+
+.faqstackup{
+    margin-top: -3px;
+    font-size: 13px;
 }
 .faqstacklefttext{
-    top: -60px;
-        right: 572px;
+    top: -33px;
+        right: 657px;
 }
 .faqstackrightup{
-    top: -59px;
-    right: 10px;
+        top: -30px;
+        right: 37px;
 
 }
 
 
 }
 
+@media only screen  and  (max-width: 1393px) {
+   
+    .chatEmptyStateIcon{
+        position: absolute;
+        top: 45px;
+        left: -20px;
+        bottom: 152px;
+        height: 48px;
+    }
+
+    .faqstackli{
+        margin-top: -4px;
+        font-size: 13px;
+}
+
+.faqstackup{
+    margin-top: -3px;
+    font-size: 13px;
+}
+.faqstacklefttext{
+    top: -33px;
+        right: 657px;
+}
+.faqstackrightup{
+        top: -30px;
+        right: 37px;
+
+}
+
+
+}
+
+@media only screen  and  (max-width: 1366px) {
+   
+    .chatEmptyStateIcon{
+        position: absolute;
+        top: 45px;
+        left: -20px;
+        bottom: 152px;
+        height: 48px;
+    }
+
+    .faqstackli{
+        margin-top: -4px;
+        font-size: 13px;
+}
+
+.faqstackup{
+    margin-top: -3px;
+    font-size: 13px;
+}
+.faqstacklefttext{
+    top: -33px;
+        right: 608px;
+}
+.faqstackrightup{
+        top: -30px;
+        right: 37px;
+
+}
+
+
+}
+
+@media only screen  and  (max-width: 1346px) {
+   
+    .chatEmptyStateIcon{
+        position: absolute;
+        top: 45px;
+        left: -20px;
+        bottom: 152px;
+        height: 48px;
+    }
+
+    .faqstackli{
+        margin-top: -4px;
+        font-size: 13px;
+}
+
+.faqstackup{
+    margin-top: -3px;
+    font-size: 13px;
+}
+.faqstacklefttext{
+    top: -33px;
+        right: 608px;
+}
+.faqstackrightup{
+        top: -30px;
+        right: 37px;
+
+}
+
+
+}
+
+
+@media only screen  and  (max-width: 1327px) {
+   
+    .chatEmptyStateIcon{
+        position: absolute;
+        top: 45px;
+        left: -20px;
+        bottom: 152px;
+        height: 48px;
+    }
+
+    .faqstackli{
+        margin-top: -4px;
+        font-size: 13px;
+}
+
+.faqstackup{
+    margin-top: -3px;
+    font-size: 13px;
+}
+.faqstacklefttext{
+    top: -33px;
+        right: 580px;
+}
+.faqstackrightup{
+        top: -30px;
+        right: 37px;
+
+}
+
+
+}
+
+@media only screen  and  (max-width: 1310px) {
+   
+    .chatEmptyStateIcon{
+        position: absolute;
+        top: 45px;
+        left: -20px;
+        bottom: 152px;
+        height: 48px;
+    }
+
+    .faqstackli{
+        margin-top: -4px;
+        font-size: 13px;
+}
+
+.faqstackup{
+    margin-top: -3px;
+    font-size: 13px;
+}
+.faqstacklefttext{
+    top: -33px;
+        right: 568px;
+}
+.faqstackrightup{
+        top: -30px;
+        right: 37px;
+
+}
+
+
+}
+@media only screen and  (max-width: 1298px) {
+   
+    .chatEmptyStateIcon{
+        position: absolute;
+        top: 45px;
+        left: -20px;
+        bottom: 152px;
+        height: 48px;
+    }
+
+    .faqstackli{
+        margin-top: -4px;
+        font-size: 13px;
+}
+
+.faqstackup{
+    margin-top: -3px;
+    font-size: 13px;
+}
+.faqstacklefttext{
+    top: -33px;
+        right: 558px;
+}
+.faqstackrightup{
+        top: -30px;
+        right: 0px;
+
+}
+
+}
 @media only screen and  (max-width: 1278px) {
    
     .chatEmptyStateIcon{
@@ -529,9 +718,14 @@ a {
         height: 48px;
     }
 
-    .faqstackli, .faqstackup{
-        margin-top: -3px;
+    .faqstackli{
+        margin-top: -4px;
         font-size: 13px;
+}
+
+.faqstackup{
+    margin-top: -3px;
+    font-size: 13px;
 }
 .faqstacklefttext{
     top: -33px;
@@ -539,11 +733,23 @@ a {
 }
 .faqstackrightup{
         top: -30px;
-        right: -5px;
+        right: 0px;
 
 }
 
 }
+@media only screen and  (max-width: 1067px) {
+  
+    .faqstacklefttext{
+        top: -33px;
+        right: 327px;
+    }
+    .faqstackrightup{
+    top: -30px;
+        right: -62px;
+    }
+    
+    }
 @media only screen and  (max-width: 1027px) {
    
    
@@ -558,6 +764,12 @@ a {
 
 }
 
+.faqstackli{
+    margin-top: -2px;
+    font-size: 13px;
+}
+
+
 }
 @media only screen and  (max-width: 1024px) {
    
@@ -569,16 +781,21 @@ a {
         height: 48px;
     }
 
-    .faqstackli, .faqstackup{
-        margin-top: -3px;
+    .faqstackli{
+        margin-top: 0px;
+        font-size: 13px;
+    }
+
+    .faqstackup{
+        margin-top: -4px;
         font-size: 13px;
     }
 .faqstacklefttext{
-    top: -33px;
-        right: 280px;
+    top: -32px;
+        right: 245px;
 }
 .faqstackrightup{
-    top: -30px;
+    top: -33px;
         right: -82px;
 
 }
@@ -595,9 +812,14 @@ a {
         height: 35px;
     }
 
-    .faqstackli, .faqstackup{
-        margin-top: -2px;
+    .faqstackli{
+        margin-top: 0px;
         font-size: 10px;
+}
+
+.faqstackup{
+    margin-top: -2px;
+    font-size: 10px;
 }
 .faqstacklefttext{
     top: -27px;
@@ -634,9 +856,15 @@ a {
         bottom: 152px;
         height: 35px;
     }
-    .faqstackli, .faqstackup{
-        margin-top: 1px;
+
+    .faqstackli{
+        margin-top: -1px;
         font-size: 9px;
+}
+
+.faqstackup{
+    margin-top: 1px;
+    font-size: 9px;
 }
 .faqstacklefttext{
     top: -29px;
@@ -644,7 +872,7 @@ a {
 }
 .faqstackrightup{
     top: -30px;
-    right: -303px;
+    right: -283px;
 
 }
 .buttonstack{
@@ -717,11 +945,17 @@ a {
     .chatEmptyStateTitle {
         line-height: 36px;
     }
-    .faqstackli, .faqstackup{
+    .faqstackup{
 
-    margin-top: 4px;
+    margin-top: 8px;
         font-size: 7px;
     }
+
+    .faqstackli{
+
+        margin-top: 0px;
+            font-size: 7px;
+        }
     .faqstacklefttext{
         top: -33px;
         right: -242px;

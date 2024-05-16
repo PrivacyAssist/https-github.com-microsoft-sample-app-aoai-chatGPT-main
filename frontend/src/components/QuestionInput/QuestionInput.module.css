@@ -153,27 +153,7 @@
 
 @media only screen and  (max-width: 640px)  {
    
-    .chatEmptyStateIcon{
-        position: absolute;
-        top: 57px;
-        left: -20px;
-        bottom: 152px;
-        height: 35px;
-    }
-
-    .faqstackli, .faqstackup{
-        margin-top: 1px;
-        font-size: 9px;
-}
-.faqstacklefttext{
-    top: -29px;
-    right: -86px;
-}
-.faqstackrightup{
-    top: -30px;
-    right: -303px;
-
-}
+   
 .buttonstack{
     left: -43px;
        top: -120px;
@@ -194,34 +174,18 @@
 }
 
 }
+
+
 @media only screen and (max-width: 480px) {
    
 
-    .chatEmptyStateTitle {
-       
-        font-size: 20px;
-        margin-top: -85px
-    }
-
-    .chatEmptyStateSubtitle {
-        font-size: 11px;
-    }
-
-    .chatEmptyStateBelowSubtitle{
-        font-size: 11px;
-    }
+   
     .buttonstack {
       
     left: -47px;
        top: -187px;
     }
-    .chatEmptyStateIcon {
-        
-        top: 59px;
-        left: -25px;
-        bottom: 152px;
-        height: 34px;
-    }
+    
     .buttoncontainer {
         column-gap: 3px;
         width: 150%;
@@ -229,33 +193,6 @@
 
     }
 
-    .newChatIcon {
-        left: 0px;
-    }
-
-    .clearChatBroom {
-        left: 0px;
-    }
-
-    
-
-    .chatEmptyStateTitle {
-        line-height: 36px;
-    }
-    .faqstackli, .faqstackup{
-
-    margin-top: 4px;
-        font-size: 7px;
-    }
-    .faqstacklefttext{
-        top: -33px;
-        right: -242px;
-    }
-
-    .faqstackrightup {
-        top: -33px;
-        right: -383px;
-    }
     .questionInputContainer {
         
         width: 248px;
@@ -264,13 +201,7 @@
         left: 0%;
     
 }
-.clearChatBroomNoCosmos {
-   
-    height: 34px;
-  
-    top: 87px;
-    
-}
+
 }
 
 
