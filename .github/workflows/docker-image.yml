@@ -3,36 +3,31 @@ name: Docker Image CI
 on:
   push:
     branches:
-      - main
+    - main
 
 jobs:
+
   build:
+
     runs-on: ubuntu-latest
+
     steps:
-      - name: Setup Node.js 20
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20.x'
-
-      - name: Azure Container Registry Login
-        uses: Azure/docker-login@v1
-        with:
-          # Container registry username
-          username: ${{ secrets.DOCKER_USERNAME }}
-          # Container registry password
-          password: ${{ secrets.DOCKER_PASSWORD }}
-          # Container registry server url
-          login-server: sampleappaoaichatgpt.azurecr.io
-          
-
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      # Add your other steps here
-
-      - name: Build the Docker image
-        run: |
-          docker build . --file WebApp.Dockerfile --tag sampleappaoaichatgpt.azurecr.io/sample-app-aoai-chatgpt:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER;
-          docker tag sampleappaoaichatgpt.azurecr.io/sample-app-aoai-chatgpt:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER sampleappaoaichatgpt.azurecr.io/sample-app-aoai-chatgpt:latest;
-          docker push sampleappaoaichatgpt.azurecr.io/sample-app-aoai-chatgpt:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER;
-          docker push sampleappaoaichatgpt.azurecr.io/sample-app-aoai-chatgpt:latest;
+    - name: Azure Container Registry Login
+      uses: Azure/docker-login@v1
+      with:
+        # Container registry username
+        username: ${{ secrets.DOCKER_USERNAME }}
+        
+        # Container registry password
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        # Container registry server url
+        login-server: sampleappaoaichatgpt.azurecr.io
+        
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run:         
+        docker build . --file WebApp.Dockerfile --tag sampleappaoaichatgpt.azurecr.io/sample-app-aoai-chatgpt-main:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER;
+        docker tag sampleappaoaichatgpt.azurecr.io/sample-app-aoai-chatgpt-main:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER sampleappaoaichatgpt.azurecr.io/sample-app-aoai-chatgpt:latest;
+        docker push sampleappaoaichatgpt.azurecr.io/sample-app-aoai-chatgpt-main:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER;
+        docker push sampleappaoaichatgpt.azurecr.io/sample-app-aoai-chatgpt-main:latest;
+      
