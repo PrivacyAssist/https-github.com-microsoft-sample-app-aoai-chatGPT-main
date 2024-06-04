@@ -3,29 +3,35 @@ name: Docker Image CI
 on:
   push:
     branches:
-    - main
+      - main
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
 
     steps:
     - name: Azure Container Registry Login
       uses: Azure/docker-login@v1
       with:
-        # Container registry username
         username: ${{ secrets.DOCKER_USERNAME }}
-        
-        # Container registry password
         password: ${{ secrets.DOCKER_PASSWORD }}
-        # Container registry server url
         login-server: sampleappaoaichatgpts.azurecr.io
         
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run:         
-        docker build -t vsbejgam/privacychatbot:latest --file WebApp.Dockerfile . ;
-        docker push sampleappaoaichatgpts.azurecr.io/vsbejgam/privacychatbot:latest;
-      
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Build and push Docker image
+      run: |
+        IMAGE_NAME=sampleappaoaichatgpts.azurecr.io/privacychatbot
+        DATE_TAG=$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER
+        LATEST_TAG=latest
+        
+        # Build the Docker image
+        docker build . --file WebApp.Dockerfile --tag $IMAGE_NAME:$DATE_TAG
+        
+        # Tag the image as latest
+        docker tag $IMAGE_NAME:$DATE_TAG $IMAGE_NAME:$LATEST_TAG
+        
+        # Push both tags to the registry
+        docker push $IMAGE_NAME:$DATE_TAG
+        docker push $IMAGE_NAME:$LATEST_TAG
