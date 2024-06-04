@@ -17,7 +17,7 @@ import {
     ChatMessage,
     ConversationRequest,
     conversationApi,
-    Citation,
+    Citation, // cit
     ToolMessageContent,
     ChatResponse,
     getUserInfo,
@@ -43,13 +43,32 @@ interface Props {
     conversationId?: string;
 
 }
+// interface Citation {
+//     id: string;
+//     title: string;
+//     url: string;
+//     content: string;
+//     filepath: string;
+//     metadata: Record<string, any>;
+//     chunk_id: string;
+//     reindex_id: string;
+// }
 
 const enum messageStatus {
     NotRunning = "Not Running",
     Processing = "Processing",
     Done = "Done"
 }
-
+// const defaultCitation: Citation = {
+//     id: "default-id",
+//     title: "Default Title",
+//     url: "https://default.url",
+//     content: "Default content for the citation panel.",
+//     filepath: "default/path",
+//     metadata: {},
+//     chunk_id: "default-chunk-id",
+//     reindex_id: "default-reindex-id"
+// };
 
 const Chat = () => {
     const appStateContext = useContext(AppStateContext)
@@ -58,6 +77,8 @@ const Chat = () => {
     const chatMessageStreamEnd = useRef<HTMLDivElement | null>(null);
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [showLoadingMessage, setShowLoadingMessage] = useState<boolean>(false);
+    // const [activeCitation, setActiveCitation] = useState<Citation>(defaultCitation);
+    // const [isCitationPanelOpen, setIsCitationPanelOpen] = useState<boolean>(true);
     const [activeCitation, setActiveCitation] = useState<Citation>();
     const [isCitationPanelOpen, setIsCitationPanelOpen] = useState<boolean>(false);
     const abortFuncs = useRef([] as AbortController[]);
@@ -510,7 +531,7 @@ const Chat = () => {
 
     const clearChat = async () => {
         setClearingChat(true)
-        setIsVisible(true)
+        setIsVisible(false)
 
         if (appStateContext?.state.currentChat?.id && appStateContext?.state.isCosmosDBAvailable.cosmosDB) {
             let response = await historyClear(appStateContext?.state.currentChat.id)
@@ -523,6 +544,8 @@ const Chat = () => {
             } else {
                 appStateContext?.dispatch({ type: 'DELETE_CURRENT_CHAT_MESSAGES', payload: appStateContext?.state.currentChat.id });
                 appStateContext?.dispatch({ type: 'UPDATE_CHAT_HISTORY', payload: appStateContext?.state.currentChat });
+                // setActiveCitation(defaultCitation);
+                // setIsCitationPanelOpen(true);
                 setActiveCitation(undefined);
                 setIsCitationPanelOpen(false);
                 setMessages([])
@@ -535,6 +558,8 @@ const Chat = () => {
         setIsVisible(true)
         setProcessMessages(messageStatus.Processing)
         setMessages([])
+        // setIsCitationPanelOpen(true);
+        // setActiveCitation(defaultCitation);
         setIsCitationPanelOpen(false);
         setActiveCitation(undefined);
         appStateContext?.dispatch({ type: 'UPDATE_CURRENT_CHAT', payload: null });
@@ -659,8 +684,12 @@ const Chat = () => {
                     <h2 className={styles.chatEmptyStateSubtitle} style={{ fontSize: "20px" }}><strong>If you deployed in the last 10 minutes, please wait and reload the page after 10 minutes.</strong></h2>
                 </Stack>
             ) : (
-                <Stack horizontal className={styles.chatRootoutercontainer}>
-                        <Stack className={styles.Navbar} > 
+                
+                <Stack horizontal >
+           
+             <div className={isCitationPanelOpen ? styles.citationchatContainerinnercontainerup : styles.chatContainerinnercontainerup}>
+
+                        <Stack className={styles.faqstack} > 
                            <Stack > 
                               <div className={styles.faqstacklefttext}>
                              <h4  className={styles.faqstackup}>Finance Privacy Assistant Questions?  </h4>
@@ -668,7 +697,7 @@ const Chat = () => {
                               </div>
                                                         
                             </Stack>   
-                            <Stack className={styles.faqstackleftup}>
+                            <Stack className={styles.faqimg}>
                                  <img
                                  src={ui?.logo ? ui.logo : Contoso}  
                                  className={styles.chatEmptyStateIcon}                               
@@ -684,8 +713,8 @@ const Chat = () => {
                              </Stack>
 
                          </Stack > 
-                    
-                    <div className={styles.chatContainerinnercontainer}>
+             </div>                
+                    <div className={isCitationPanelOpen ? styles.citationchatContainerinnercontainer : styles.chatContainerinnercontainer}>
                         {!messages || messages.length < 1 ? (
                             <Stack className={styles.chatEmptyState}>
                                 {/* <img
@@ -714,7 +743,7 @@ const Chat = () => {
                                                         message_id: answer.id,
                                                         feedback: answer.feedback
                                                     }}
-                                                    onCitationClicked={c => onShowCitation(c)}
+                                                    onCitationClicked={c => onShowCitation(c)} //onShowCitation(defaultCitation)
                                                 />
                                             </div> : answer.role === ERROR ? <div className={styles.chatMessageError}>
                                                 <Stack horizontal className={styles.chatMessageErrorContent}>
@@ -759,7 +788,8 @@ const Chat = () => {
                                 </Stack>
                             )}
                             <Stack>
-                                {appStateContext?.state.isCosmosDBAvailable?.status !== CosmosDBStatus.NotConfigured && <CommandBarButton
+                                {appStateContext?.state.isCosmosDBAvailable?.status !== CosmosDBStatus.NotConfigured && //cit
+                                <CommandBarButton
                                     role="button"
                                     styles={{
                                         icon: {
@@ -827,27 +857,29 @@ const Chat = () => {
                           />
                         </Stack>
                     </div>
-                    {/* Citation Panel */}
-                    {messages && messages.length > 0 && isCitationPanelOpen && activeCitation && (
-                        <Stack.Item className={styles.citationPanel} style={{float:'right'}} tabIndex={0} role="tabpanel" aria-label="Citations Panel">
-                            <Stack aria-label="Citations Panel Header Container" horizontal className={styles.citationPanelHeaderContainer} horizontalAlign="space-between" verticalAlign="center">
-                                <span aria-label="Citations" className={styles.citationPanelHeader}>Citations</span>
-                                <IconButton iconProps={{ iconName: 'Cancel' }} aria-label="Close citations panel" onClick={() => setIsCitationPanelOpen(false)} />
-                            </Stack>
-                            <h5 className={styles.citationPanelTitle} tabIndex={0} title={activeCitation.url && !activeCitation.url.includes("blob.core") ? activeCitation.url : activeCitation.title ?? ""} onClick={() => onViewSource(activeCitation)}>{activeCitation.title}</h5>
-                            <div tabIndex={0}>
-                                <ReactMarkdown
-                                    linkTarget="_blank"
-                                    className={styles.citationPanelContent}
-                                    children={DOMPurify.sanitize(activeCitation.content, {ALLOWED_TAGS: XSSAllowTags})}
-                                    remarkPlugins={[remarkGfm]}
-                                    rehypePlugins={[rehypeRaw]}
-                                />
-                            </div>
-                        </Stack.Item>
-                    )}
-                    {(appStateContext?.state.isChatHistoryOpen && appStateContext?.state.isCosmosDBAvailable?.status !== CosmosDBStatus.NotConfigured) && <ChatHistoryPanel />}
-                </Stack>
+                   {/* Citation Panel */}
+{ //messages && messages.length > 0 && (
+   messages && messages.length > 0 && isCitationPanelOpen && activeCitation && (
+    <Stack.Item className={styles.citationPanel} style={{float:'right'}} tabIndex={0} role="tabpanel" aria-label="Citations Panel">
+        <Stack aria-label="Citations Panel Header Container" horizontal className={styles.citationPanelHeaderContainer} horizontalAlign="space-between" verticalAlign="center">
+            <span aria-label="Citations" className={styles.citationPanelHeader}>Citations</span>
+            { <IconButton iconProps={{ iconName: 'Cancel' }} aria-label="Close citations panel" onClick={() => setIsCitationPanelOpen(true)} /> }
+            {/* <IconButton iconProps={{ iconName: 'Cancel' }} aria-label="Close citations panel" onClick={() => setIsCitationPanelOpen(false)} /> */}
+        </Stack>
+        <h5 className={styles.citationPanelTitle} tabIndex={0} title={activeCitation.url && !activeCitation.url.includes("blob.core") ? activeCitation.url : activeCitation.title ?? ""} onClick={() => onViewSource(activeCitation)}>{activeCitation.title}</h5>
+        <div tabIndex={0}>
+            <ReactMarkdown
+                linkTarget="_blank"
+                className={styles.citationPanelContent}
+                children={DOMPurify.sanitize(activeCitation.content, {ALLOWED_TAGS: XSSAllowTags})}
+                remarkPlugins={[remarkGfm]}
+                rehypePlugins={[rehypeRaw]}
+            />
+        </div>
+    </Stack.Item>
+)}
+{(appStateContext?.state.isChatHistoryOpen && appStateContext?.state.isCosmosDBAvailable?.status !== CosmosDBStatus.NotConfigured) && <ChatHistoryPanel />}
+</Stack>
             )}
         </div>
     );

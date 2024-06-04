@@ -63,9 +63,9 @@ export const QuestionInput = ({ onSend, disabled, placeholder, clearOnSend, conv
       {isVisible && (
          <Stack  className={styles.buttonstack}>
 
-              <div className={styles.buttoncontainer}>
+            <div className={styles.buttoncontainer}>
  
-
+            
              <button className={styles.custombutton}  onClick={()=>{onSend('How do I intiate a finance privacy review','');handleButtonClick();}}>
                   <span className={styles.line}><strong>How do I intiate </strong> </span>
                   <span className={styles.Subline}>a finance privacy review </span>
@@ -80,7 +80,7 @@ export const QuestionInput = ({ onSend, disabled, placeholder, clearOnSend, conv
              </div>
 
              <div className={styles.buttoncontainer}>
- 
+
              <button className={styles.custombutton}  onClick={()=>{ onSend('Show me where the finance privacy site is','');handleButtonClick()}}>
                   <span className={styles.line}><strong>Show me where  </strong>  <br/> </span>
                   <span className={styles.Subline}>the finance privacy site is</span>
@@ -90,8 +90,8 @@ export const QuestionInput = ({ onSend, disabled, placeholder, clearOnSend, conv
                  <span className={styles.line}><strong>How do I know when to start</strong></span>
                  <span className={styles.Subline}>a privacy review</span>
             </button>
-              </div>
-
+            </div>
+          
          </Stack>
           )}
           

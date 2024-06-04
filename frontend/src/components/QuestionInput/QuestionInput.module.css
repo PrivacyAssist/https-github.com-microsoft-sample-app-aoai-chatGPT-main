@@ -8,7 +8,7 @@
     background: #FFFFFF;
     box-shadow: 0 8px 16px #00000024, 0 0 2px #0000001f;
     border-radius: 8px;
-    width: 804px;
+    width: -webkit-fill-available;
 }
 
 .questionInputTextArea {
@@ -100,107 +100,152 @@
     display: block;
     color: grey;
   }
-  @media only screen and  (max-width: 1536px) {
+ 
+  @media only screen  and  (max-width: 1500px) {
    
-    .questionInputContainer
-    {
-        width: 765px;
-        top: 13%;
-    
-    }
+  .buttonstack{
+  left: 37px;
+  align-items: stretch;
+  flex-direction: column;
+  align-content: space-around;
+  flex-wrap: wrap;
+  top: -162px;
+}
+}
+
+@media only screen  and  (max-width: 1400px) {
+   
+   .buttonstack
+   {
+    top: -160px;
+   }
+
+   .questionInputContainer
+   {
+    height: 134px;
+    position: absolute;
+    left: 2%;
+    right: 4%;
+    top: 0px
+   }
+
 
 }
 
+@media only screen  and  (max-width: 1393px) {
+   
+  .buttonstack {
+    left: -27px;  
+    top: -125px;
+  }
+  .buttoncontainer
+  {
+    width: 113%;
+  }
+  .questionInputContainer
+  {
+    height: 113px;
+    top: 22px;
+    width: 100%;
+  }
+
+  
+
+}
+
+@media only screen  and  (max-width: 777px) {
+   
+  .buttoncontainer {
+    width: 123%;
+    column-gap: 4px;
+}
+
+.buttonstack {
+  left: -32px;
+
+
+}
+}
+
+@media only screen  and  (max-width: 700px) {
+   
+  .buttonstack
+  {
+    left: -8px;
+    top: -144px;
+  }
+  .buttoncontainer
+  {
+    width: 114%;
+  }
+
+
+}
+
+
+@media only screen  and  (max-width: 630px) {
+   
+  .buttonstack
+  {
+    top: -160px;
+    left: -30px;
+  }
+  .buttoncontainer
+  {
+    width: 127%;
+
+  }
+
+}
+
+@media only screen  and  (max-width: 1310px) {
+   
+
+
+
+}
+@media only screen and  (max-width: 1298px) {
+   
+   
+
+}
 @media only screen and  (max-width: 1278px) {
    
-    .questionInputContainer
-    {
-        width: 751px;
-    }
-
-
-
-}
-
-
-@media only screen  and (max-width: 1024px) {
-   
-.questionInputContainer{
-    width: 594px;
-}
-
-}
-
-@media only screen and  (max-width: 768px)  {
-   
- .buttonstack{
-    left: 23px;
-     
-}
-.buttoncontainer
-{
     
-    width: 100%;
+
 }
-.questionInputContainer
-{
-    width: 445px;
-    height: 102px;
-    top: 46%;
+@media only screen and  (max-width: 1067px) {
+  
+
+    
+    }
+@media only screen and  (max-width: 1027px) {
+   
+   
+
+
 }
+@media only screen and  (max-width: 1024px) {
+   
+   
+
+}
+
+@media only screen  and (max-width: 768px)  {
+   
+   
 
 }
 
 @media only screen and  (max-width: 640px)  {
    
-   
-.buttonstack{
-    left: -43px;
-       top: -120px;
-}
-.buttoncontainer
-{
-    row-gap: 47px;
-    column-gap: 9px;
-    width: 132%;
-}
-.questionInputContainer
-{
-    left: 2%;
-    top: 32%;
-    bottom: 0%;
-    width: 375px;
-    height: 106px;
-}
+  
 
 }
 
 
 @media only screen and (max-width: 480px) {
-   
-
-   
-    .buttonstack {
-      
-    left: -47px;
-       top: -187px;
-    }
-    
-    .buttoncontainer {
-        column-gap: 3px;
-        width: 150%;
-        row-gap: 60px;
-
-    }
-
-    .questionInputContainer {
-        
-        width: 248px;
-        height: 71.5%;
-        top: 63%;
-        left: 0%;
-    
-}
+ 
 
 }
 

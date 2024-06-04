@@ -45,7 +45,7 @@
     align-items: flex-end;
     text-align: center;
     line-height: 24px;
-    margin-top: 36px;
+    margin-top: -120px;
     margin-bottom: 0px;
 }
 
@@ -60,26 +60,41 @@
     letter-spacing: -0.01em;
     color: #616161;
 }
-
-.chatRootoutercontainer {
-    flex: 1;
+ .citationchatContainerinnercontainerup
+{   flex: 1;
+    width: 50%;
     display: flex;
-    margin-top: 0px;
-    margin-bottom: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
-    gap: 5px;
-    position: relative;
-    width: 100%; /* Adjust width as needed */
-    height: 300px; /* Adjust height as needed */
-    padding: 20px; /* Adjust space on left and right */
-    margin-top: 50px; /* Adjust space on top */
-    background-color: #f0f0f0; /* Background color of outer container */
-  }
+    flex-direction: column;
+    align-items: center;
+   
+    border-radius: 8px;    
+    max-height: calc(100vh - 100px);
+    position: absolute;
+    top: 75px;
+    left: 761px;
+}
+
   
-  .chatContainerinnercontainer {
+  .chatContainerinnercontainerup {
     flex: 1;
-    width: 70%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+    border-radius: 8px;    
+    max-height: calc(100vh - 100px);
+    position: absolute;
+    left: 968px;
+    bottom: 0;
+  }
+
+  .citationchatContainerinnercontainer
+{
+    top: 70px;
+    left: 38px;
+    flex: 1;
+    width: 65%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -89,45 +104,38 @@
     overflow-y: auto;
     max-height: calc(100vh - 100px);
     position: absolute;
-    top: 0px;
-    left: 190px;
+   
+    bottom: 0;
+    background-color: #fff;
+    border: 1px solid #cccccc;
+}
+  .chatContainerinnercontainer {
+    flex: 1;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: radial-gradient(108.78% 108.78% at 50.02% 19.78%, #FFFFFF 57.29%, #EEF6FE 100%);
+    box-shadow: 0 2px 4px #00000024, 0 0 2px #0000001f;
+    border-radius: 8px;
+    overflow-y: auto;
+    max-height: calc(100vh - 100px);
+    position: absolute;
+    top: 60px;
+    left: 242px;
     bottom: 0;
     background-color: #fff;
     border: 1px solid #cccccc;
   }
- 
-  .buttonstack {
-    display: flex;
-    flex-flow: column;
-    width: 95%;
-    height: auto;
-    box-sizing: border-box;
-    left: 100px;
-    justify-content: space-evenly;
-    align-items: baseline;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: space-around;
 
-  }
-   
-  
+    
 
-  .faqstackleftup {
-    position: absolute;
-    top: -92px;
-    left: 212px;
-    width: 479px;
-    background-color: #f0f0f0;
-    font-size: 12px;
-    font-family: Arial;
-  }
 
   .faqstacklefttext {
     position: absolute;
     top: -69px;
     right: 568px;
-    width: 500px;
+    width: max-content;
     background-color: #f0f0f0;   
     font-size: 13px;
     font-family: Arial;
@@ -135,10 +143,7 @@
     flex-direction: column;
     
   }
-  .Navbar
-  {
-    max-width: 0px;
-  }
+  
   .chatEmptyStateIcon {
     position: absolute;
     top: 34px;
@@ -151,7 +156,7 @@
     position: absolute;
     top: -70px;
     right: 10px;
-    width: 500px;
+    width: max-content;
     background-color: #f0f0f0;
     padding: revert;
     font-size: 13px;
@@ -179,35 +184,9 @@
   }
 
   .faqstackup {
-    margin-bottom: 5px;
+    margin-bottom: -12px;
 }
   
-  
- 
-  .buttoncontainer {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 60px;
-    column-gap: 50px;
-    width: 99%;
-  }
-  
-  .custombutton {
-       
-    color: #000;
-    max-width: 1028px;
-    margin-top: 8px;
-    padding: 10px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    align-content: flex-start;
-    border-color: #000;
-  }
-  
-  .custombutton .line {
-    display: block;
-  }
-
 
 .chatEmptyStateBelowSubtitle {
     margin-top: 0px;
@@ -392,6 +371,17 @@
 }
 
 .citationPanel {
+
+    position: absolute;
+    top: 67px;
+    right: 0px;
+    width: 300px;
+    height: 100%;
+    background-color: #f4f4f4;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow-y: auto;
+    z-index: 1000;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -485,502 +475,801 @@ a {
     text-decoration: underline;
     cursor: pointer;
 }
+.chatRootoutercontainer
+{
+    right:10px;
+}
 
 @media only screen  and  (max-width: 1400px) {
    
-    .chatEmptyStateIcon{
-        position: absolute;
-        top: 45px;
-        left: -20px;
-        bottom: 152px;
-        height: 48px;
+    .citationPanel
+    {
+        
+        right: 113px;
     }
-
-    .faqstackli{
-        margin-top: -4px;
-        font-size: 13px;
+    .newChatIcon
+    {
+        left: -41px;
+    }
+   .chatContainerinnercontainerup
+   {
+    right: -118px;
+    bottom: 682px;
+   }
+   .chatContainerinnercontainer
+   {
+    top: 70px;
+    left: 242px;
+   }
+.faqstacklefttext
+{    
+    top: -63px;
+    right: 1135px;
+}
+.chatEmptyStateIcon
+{
+    position: absolute;
+    top: -59px;
+    left: -729px;
+    height: 60px;
+}
+.faqimg
+{
+    height: 80px;
 }
 
-.faqstackup{
-    margin-top: -3px;
-    font-size: 13px;
+.faqstackrightup
+{
+    top: -63px;
+    right:  540px;
+    
 }
-.faqstacklefttext{
-    top: -33px;
-        right: 657px;
+.chatEmptyStateTitle
+{
+    
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+    line-height: 24px;
+    margin-top: -120px;
 }
-.faqstackrightup{
-        top: -30px;
-        right: 37px;
 
+.clearChatBroomNoCosmos
+{
+    top:0px
+}
 }
 
-
-}
+@media only screen  and  (max-width: 1398px) {
+   
+    .chatContainerinnercontainerup
+    {
+      top:75px;
+    }
+  
+  }
 
 @media only screen  and  (max-width: 1393px) {
    
-    .chatEmptyStateIcon{
-        position: absolute;
-        top: 45px;
-        left: -20px;
-        bottom: 152px;
-        height: 48px;
-    }
-
-    .faqstackli{
-        margin-top: -4px;
-        font-size: 13px;
+.newChatIcon
+{
+    top: 83px;
+}
+.clearChatBroomNoCosmos
+{
+    top:33px
+}
 }
 
-.faqstackup{
-    margin-top: -3px;
-    font-size: 13px;
-}
-.faqstacklefttext{
-    top: -33px;
-        right: 657px;
-}
-.faqstackrightup{
-        top: -30px;
-        right: 37px;
-
-}
-
-
-}
-
-@media only screen  and  (max-width: 1366px) {
+  @media only screen  and  (max-width: 1390px) {
    
-    .chatEmptyStateIcon{
-        position: absolute;
-        top: 45px;
-        left: -20px;
-        bottom: 152px;
-        height: 48px;
-    }
-
-    .faqstackli{
-        margin-top: -4px;
-        font-size: 13px;
-}
-
-.faqstackup{
-    margin-top: -3px;
-    font-size: 13px;
-}
-.faqstacklefttext{
-    top: -33px;
-        right: 608px;
-}
-.faqstackrightup{
-        top: -30px;
-        right: 37px;
-
-}
-
-
-}
-
-@media only screen  and  (max-width: 1346px) {
-   
-    .chatEmptyStateIcon{
-        position: absolute;
-        top: 45px;
-        left: -20px;
-        bottom: 152px;
-        height: 48px;
-    }
-
-    .faqstackli{
-        margin-top: -4px;
-        font-size: 13px;
-}
-
-.faqstackup{
-    margin-top: -3px;
-    font-size: 13px;
-}
-.faqstacklefttext{
-    top: -33px;
-        right: 608px;
-}
-.faqstackrightup{
-        top: -30px;
-        right: 37px;
-
-}
-
-
-}
-
-
-@media only screen  and  (max-width: 1327px) {
-   
-    .chatEmptyStateIcon{
-        position: absolute;
-        top: 45px;
-        left: -20px;
-        bottom: 152px;
-        height: 48px;
-    }
-
-    .faqstackli{
-        margin-top: -4px;
-        font-size: 13px;
-}
-
-.faqstackup{
-    margin-top: -3px;
-    font-size: 13px;
-}
-.faqstacklefttext{
-    top: -33px;
-        right: 580px;
-}
-.faqstackrightup{
-        top: -30px;
-        right: 37px;
-
-}
-
-
-}
-
-@media only screen  and  (max-width: 1310px) {
-   
-    .chatEmptyStateIcon{
-        position: absolute;
-        top: 45px;
-        left: -20px;
-        bottom: 152px;
-        height: 48px;
-    }
-
-    .faqstackli{
-        margin-top: -4px;
-        font-size: 13px;
-}
-
-.faqstackup{
-    margin-top: -3px;
-    font-size: 13px;
-}
-.faqstacklefttext{
-    top: -33px;
-        right: 568px;
-}
-.faqstackrightup{
-        top: -30px;
-        right: 37px;
-
-}
-
-
-}
-@media only screen and  (max-width: 1298px) {
-   
-    .chatEmptyStateIcon{
-        position: absolute;
-        top: 45px;
-        left: -20px;
-        bottom: 152px;
-        height: 48px;
-    }
-
-    .faqstackli{
-        margin-top: -4px;
-        font-size: 13px;
-}
-
-.faqstackup{
-    margin-top: -3px;
-    font-size: 13px;
-}
-.faqstacklefttext{
-    top: -33px;
-        right: 558px;
-}
-.faqstackrightup{
-        top: -30px;
-        right: 0px;
-
-}
-
-}
-@media only screen and  (max-width: 1278px) {
-   
-    .chatEmptyStateIcon{
-        position: absolute;
-        top: 45px;
-        left: -20px;
-        bottom: 152px;
-        height: 48px;
-    }
-
-    .faqstackli{
-        margin-top: -4px;
-        font-size: 13px;
-}
-
-.faqstackup{
-    margin-top: -3px;
-    font-size: 13px;
-}
-.faqstacklefttext{
-    top: -33px;
-        right: 538px;
-}
-.faqstackrightup{
-        top: -30px;
-        right: 0px;
-
-}
-
-}
-@media only screen and  (max-width: 1067px) {
   
-    .faqstacklefttext{
-        top: -33px;
-        right: 327px;
+    .faqstacklefttext
+    {
+        right:1120px;
+    }
+}
+
+
+  @media only screen  and  (max-width: 1384px) {
+   
+  
+    .faqstacklefttext
+    {
+        right:1140px;
+    }
+}
+@media only screen  and  (max-width: 1372px) {
+   
+  
+    .faqstacklefttext
+    {
+        right:1119px;
+    }
+}
+
+@media only screen  and  (max-width: 1360px) {
+   
+  
+    .faqstacklefttext
+    {
+        right:1110px;
+    }
+}
+@media only screen  and  (max-width: 1350px) {
+   
+  
+    .faqstacklefttext
+    {
+        right:1100px;
+    }
+}
+
+@media only screen  and  (max-width: 1332px) {
+   
+  
+    .faqstacklefttext
+    {
+        right:1088px;
+    }
+}
+@media only screen  and  (max-width: 1312px) {
+   
+  .citationPanel
+  {
+    right: 100px;
+  }
+    .faqstacklefttext
+    {
+        right:1083px;
+    }
+}
+
+@media only screen  and  (max-width: 1281px) {
+   
+  
+    .citationPanel
+    {
+        right:88px;
+    }
+}
+@media only screen  and  (max-width: 1293px) {
+   
+  
+    .faqstacklefttext
+    {
+        right:1076px;
+    }
+}
+
+@media only screen  and  (max-width: 1273px) {
+   
+  
+    .faqstacklefttext
+    {
+        right:1066px;
+    }
+}
+@media only screen  and  (max-width: 1253px) {
+   
+  
+    .faqstacklefttext
+    {
+        right:1057px;
+    }
+}
+@media only screen  and  (max-width: 1233px) {
+   
+  .citationPanel
+  {
+   right: 64px;
+  }
+    .faqstacklefttext
+    {
+        right:1043px;
+    }
+}
+@media only screen  and  (max-width: 1213px) {
+   
+  
+    .faqstacklefttext
+    {
+        right:1036px;
+    }
+}
+@media only screen  and  (max-width: 1193px) {
+   
+  
+    .faqstacklefttext
+    {
+        right:1023px;
     }
     .faqstackrightup{
-    top: -30px;
-        right: -62px;
+        right: 556px;
     }
+}
+@media only screen  and  (max-width: 1173px) {
+   
+    .citationPanel
+    {
+        right: 58px;
     
     }
-@media only screen and  (max-width: 1027px) {
+  
+    .faqstacklefttext
+    {
+        right:1008px;
+    }
+}
+
+@media only screen  and  (max-width: 1160px) {
    
+  
+    .citationPanel
+    {
+        right:51px;
+    }
+}
+@media only screen  and  (max-width: 1153px) {
    
-    
-.faqstacklefttext{
-    top: -33px;
-        right: 286px;
-}
-.faqstackrightup{
-    top: -30px;
-        right: -79px;
-
+  
+    .faqstacklefttext
+    {
+        right:1006px;
+    }
 }
 
-.faqstackli{
-    margin-top: -2px;
-    font-size: 13px;
-}
-
-
-}
-@media only screen and  (max-width: 1024px) {
+@media only screen  and  (max-width: 1133px) {
    
-    .chatEmptyStateIcon{
+  
+    .faqstacklefttext
+    {
+        right:987px;
+    }
+}
+@media only screen  and  (max-width: 1130px) {
+   
+  
+    .citationPanel
+    {
+        right:40px;
+    }
+}
+@media only screen  and  (max-width: 1109px) {
+   
+  
+    .citationPanel
+    {
+        right: 34px;
+    }
+}
+
+
+@media only screen  and  (max-width: 1093px) {
+   
+  
+    .faqstacklefttext
+    {
+        right:974px;
+    }
+}
+@media only screen  and  (max-width: 1089px) {
+   
+  
+    .citationPanel
+    {
+        right:23px;
+    }
+}
+
+@media only screen  and  (max-width: 1073px) {
+   
+  
+    .faqstacklefttext
+    {
+        right:964px;
+    }
+    .faqstackrightup
+    {
+        right: 577px;
+    }
+}
+
+@media only screen  and  (max-width: 1053px) {
+   
+  
+    .faqstacklefttext
+    {
+        right:954px;
+    }
+}
+@media only screen  and  (max-width: 1044px) {
+   
+  
+    .citationPanel
+    {
+        right: 14px;
+    }
+}
+@media only screen  and  (max-width: 1033px) {
+   
+  
+    .faqstacklefttext
+    {
+        right:944px;
+    }
+}
+@media only screen  and  (max-width: 1089px) {
+   
+  
+    .citationPanel
+    {
+        right:4px;
+    }
+}
+@media only screen  and  (max-width: 1024px) {
+   
+     /* .citationPanel{
+        top: 67px;
+        right: 35px;
+        width: 27%;
+} */
+}
+@media only screen  and  (max-width: 1013px) {
+   
+  
+    .faqstacklefttext
+    {
+        right:934px;
+    }
+}
+@media only screen  and  (max-width: 993px) {
+   
+  
+    .faqstacklefttext
+    {
+        right:924px;
+    }
+}
+@media only screen  and  (max-width: 987px) {
+   
+  
+   .citationPanel
+    {
+        width: 275px;
+    }
+}
+@media only screen  and  (max-width: 960px) {
+   
+    /* .citationPanel
+    {
+       top: 67px;
+        right: 12px;
+        width: 27%;
+    } */
+}
+@media only screen  and  (max-width: 973px) {
+   
+  
+    .faqstacklefttext
+    {
+        right:914px;
+    }
+    .faqstackrightup{
+        right: 588px;
+    }
+}
+@media only screen  and  (max-width: 953px) {
+   
+  
+    .faqstacklefttext
+    {
+        right:904px;
+    }
+}
+@media only screen  and  (max-width: 933px) {
+   
+  /* .citationPanel
+  {
+    top: 67px;
+        right: 17px;
+        width: 27%;
+  } */
+    .faqstacklefttext
+    {
+        right:894px;
+    }
+}
+@media only screen  and  (max-width: 917px) {
+   
+  
+    .citationPanel
+    {
+        width: 250px;
+    }
+}
+@media only screen  and  (max-width: 913px) {
+   
+  
+    .faqstacklefttext
+    {
+        right: 894px;
+    }
+}
+@media only screen  and  (max-width: 893px) {
+   
+  
+    .faqstacklefttext
+    {
+        right: 919px;
+        font-size: 11px;
+        top: -53px;
+    }
+    .faqstackrightup
+    {
+        top: -53px;
+        right: 600px;
+        font-size: 11px;
+    }
+    .chatEmptyStateIcon
+    {
         position: absolute;
-        top: 45px;
-        left: -20px;
-        bottom: 152px;
-        height: 48px;
+        top: -52px;
+        left: -725px;
+        height: 50px;
     }
-
-    .faqstackli{
-        margin-top: 0px;
-        font-size: 13px;
-    }
-
-    .faqstackup{
-        margin-top: -4px;
-        font-size: 13px;
-    }
-.faqstacklefttext{
-    top: -32px;
-        right: 245px;
 }
-.faqstackrightup{
-    top: -33px;
-        right: -82px;
-
-}
-
-}
-
-@media only screen  and (max-width: 768px)  {
+@media only screen  and  (max-width: 873px) {
    
-    .chatEmptyStateIcon{
-        position: absolute;
-        top: 57px;
-        left: -20px;
-        bottom: 152px;
-        height: 35px;
+  
+    .faqstacklefttext
+    {
+        right:910px;
     }
+}
+@media only screen  and  (max-width: 853px) {
+   
+  
+    .faqstacklefttext
+    {
+        right:900px;
+    }
+}
+@media only screen  and  (max-width: 843px) {
+   
+  
+    .faqstacklefttext
+    {
+        right:890px;
+    }
+}
+@media only screen  and  (max-width: 838px) {
+    .citationPanel
+    {
+        width: 230px;
+    }
+}
+@media only screen  and  (max-width: 823px) {
+   
+  .newChatIcon
+  {
+    top:94px;
+  }
+    .faqstacklefttext
+    {
+        right:880px;
+    }
+    .chatEmptyStateTitle
+    {
+        margin-top: -124px;
+    }
+    .clearChatBroomNoCosmos{
+        top: 44px;
+}
+}
+@media only screen  and  (max-width: 803px) {
+    .faqstacklefttext
+    {
+        right:873px;
+    }
+}
+@media only screen  and  (max-width: 790px) {
+    .faqstacklefttext
+    {
+        right:869px;
+    }
+}
+@media only screen  and  (max-width: 785px) {
+    .citationPanel
+    {
+       width: 205px;
+    }
+}
 
-    .faqstackli{
-        margin-top: 0px;
+@media only screen  and  (max-width: 777px) {
+    .faqstacklefttext
+    {
         font-size: 10px;
-}
-
-.faqstackup{
-    margin-top: -2px;
-    font-size: 10px;
-}
-.faqstacklefttext{
-    top: -27px;
-    right: 40px;
-}
-.faqstackrightup{
-    top: -26px;
-    right: -217px;
-
-}
-.buttonstack{
-    left: 23px;
-     
-}
-.buttoncontainer
-{
-    
-    width: 100%;
-}
-.questionInputContainer
-{
-    width: 464px;
-    height: 103px;
-}
-
-}
-
-@media only screen and  (max-width: 640px)  {
-   
-    .chatEmptyStateIcon{
-        position: absolute;
-        top: 57px;
-        left: -20px;
-        bottom: 152px;
-        height: 35px;
+        top: -47px;
+        right: 882px;
     }
+    .faqstackrightup
+    {
+        top: -47px;
+        right: 615px;
+        font-size: 10px;
 
-    .faqstackli{
-        margin-top: -1px;
-        font-size: 9px;
-}
-
-.faqstackup{
-    margin-top: 1px;
-    font-size: 9px;
-}
-.faqstacklefttext{
-    top: -29px;
-    right: -86px;
-}
-.faqstackrightup{
-    top: -30px;
-    right: -283px;
-
-}
-.buttonstack{
-    left: -43px;
-       top: -120px;
-}
-.buttoncontainer
-{
-    row-gap: 47px;
-    column-gap: 9px;
-    width: 132%;
-}
-.questionInputContainer
-{
-    left: 2%;
-    top: 32%;
-    bottom: 0%;
-    width: 375px;
-    height: 106px;
-}
-
-}
-
-
-@media only screen and (max-width: 480px) {
-   
-
-    .chatEmptyStateTitle {
-       
-        font-size: 20px;
-        margin-top: -85px
     }
-
-    .chatEmptyStateSubtitle {
-        font-size: 11px;
+    .chatEmptyStateIcon
+    {
+        top: -42px;
+        left: -723px;
+        height: 40px;
     }
-
-    .chatEmptyStateBelowSubtitle{
-        font-size: 11px;
+    .chatEmptyStateTitle
+    {
+        margin-top: -98px;
+        font-size: 27px;
     }
-    .buttonstack {
-      
-    left: -47px;
-       top: -187px;
-    }
-    .chatEmptyStateIcon {
+}
+@media only screen  and  (max-width: 752px) {
+    .citationPanel
+    {
         
-        top: 59px;
-        left: -25px;
-        bottom: 152px;
-        height: 34px;
+        right: 0px;
     }
-    .buttoncontainer {
-        column-gap: 3px;
-        width: 150%;
-        row-gap: 60px;
-
+}
+@media only screen  and  (max-width: 757px) {
+    .faqstacklefttext
+    {
+        
+        right: 877px;
     }
+}
 
-    .newChatIcon {
-        left: 0px;
+@media only screen  and  (max-width: 747px) {
+    .faqstacklefttext
+    {
+        
+        right: 867px;
     }
-
-    .clearChatBroom {
-        left: 0px;
+}
+@media only screen  and  (max-width: 725px) {
+    .faqstacklefttext
+    {
+        
+        right: 861px;
     }
+}
 
-    
-
-    .chatEmptyStateTitle {
-        line-height: 36px;
+@media only screen  and  (max-width: 713px) {
+    .faqstacklefttext
+    {
+        
+        right: 854px;
     }
-    .faqstackup{
+}
 
-    margin-top: 8px;
+@media only screen  and  (max-width: 713px) {
+    .citationPanel{
+        right: 6px;
+        width: 193px;
+    }
+}
+@media only screen  and  (max-width: 700px) {
+   .chatEmptyStateIcon
+   {
+        top: -35px;
+        left: -728px;
+        height: 33px;
+   }
+    .faqstacklefttext
+    {
+        font-size: 9px;
+        top: -39px;
+        right: 879px;
+    }
+    .faqstackrightup
+    {
+        top: -39px;
+        right: 628px;
+        font-size: 9px;
+    }
+    .chatEmptyStateTitle
+    {
+       font-size: 23px;
+    }
+    .chatEmptyStateSubtitle
+    {
+        font-size: 14px;
+    }
+    .chatEmptyStateBelowSubtitle
+    {
+        font-size: 14px;
+    }
+}
+@media only screen  and  (max-width: 689px) {
+    .faqstacklefttext
+    {
+        
+        right: 873px;
+    }
+}
+@media only screen  and  (max-width: 677px) {
+    .faqstacklefttext
+    {
+        
+        right: 864px;
+    }
+}
+@media only screen  and  (max-width: 660px) {
+    .faqstacklefttext
+    {
+        
+        right: 857px;
+    }
+}
+@media only screen  and  (max-width: 647px) {
+    .faqstacklefttext
+    {
+        
+        right: 850px;
+    }
+}
+@media only screen  and  (max-width: 630px) {
+    .faqstacklefttext
+    {
+        
+        right: 845px;
+    }
+}
+@media only screen  and  (max-width: 630px) {
+    .faqstacklefttext
+    {
+        
+        font-size: 8px;
+        top: -33px;
+        right: 857px;
+    }
+    .faqstackrightup
+    {
+        top: -33px;
+        right: 639px;
+        font-size: 8px;
+    }
+    .chatEmptyStateIcon
+    {
+        top: -31px;
+        left: -727px;
+        height: 30px;
+    }
+}
+@media only screen  and  (max-width: 606px) {
+    .faqstacklefttext
+    {
+        
+        right: 851px;
+    }
+}
+@media only screen  and  (max-width: 597px) {
+    .faqstacklefttext
+    {
+        
+        right: 844px;
+    }
+}
+@media only screen  and  (max-width: 580px) {
+    .faqstacklefttext
+    {
+        
+        right: 839px;
+    }
+    .faqstackup
+    {
+        margin-bottom: -10px;
+    }
+}
+@media only screen  and  (max-width: 570px) {
+    .faqstacklefttext
+    {
+        
+        right: 837px;
+    }
+}
+@media only screen  and  (max-width: 565px) {
+    .faqstacklefttext
+    {
+        
+        right: 834px;
+    }
+}
+
+@media only screen  and  (max-width: 559px) {
+    .faqstacklefttext
+    {
+        
+        right: 831px;
+    }
+}
+@media only screen  and  (max-width: 551px) {
+    .faqstacklefttext
+    {
+        font-size: 7.5px;
+        right: 834px;
+    }
+}
+
+@media only screen  and  (max-width: 540px) {
+    .faqstacklefttext
+    {
+       
+        right: 831px;
+    }
+}
+
+@media only screen  and  (max-width: 535px) {
+    .faqstacklefttext
+    {
+       
+        right: 828px;
+    }
+}
+
+@media only screen  and  (max-width: 530px) {
+    .faqstacklefttext
+    {
+       font-size: 7px;
+        right: 836px;
+        top: -30px;
+    }
+    .faqstackrightup
+    {
+        top: -30px;
+        right: 650px;
         font-size: 7px;
     }
+}
 
-    .faqstackli{
-
-        margin-top: 0px;
-            font-size: 7px;
-        }
-    .faqstacklefttext{
-        top: -33px;
-        right: -242px;
+@media only screen  and  (max-width: 525px) {
+    .faqstacklefttext
+    {
+right: 832px;
     }
+}
 
-    .faqstackrightup {
-        top: -33px;
-        right: -383px;
+@media only screen  and  (max-width: 520px) {
+    .faqstacklefttext
+    {
+right: 829px;
     }
-    .questionInputContainer {
-        
-        width: 248px;
-        height: 71.5%;
-        top: 63%;
-        left: 0%;
-    
 }
-.clearChatBroomNoCosmos {
-   
-    height: 34px;
-  
-    top: 87px;
-    
+
+@media only screen  and  (max-width: 513px) {
+    .faqstacklefttext
+    {
+      right: 825px;
+    }
 }
+@media only screen  and  (max-width: 505px) {
+    .faqstacklefttext
+    {
+      right: 822px;
+    }
 }
+@media only screen  and  (max-width: 496px) {
+    .faqstacklefttext
+    {
+      right: 818px;
+    }
+}
+@media only screen  and  (max-width: 489px) {
+    .faqstacklefttext
+    {
+      right: 814px;
+    }
+}
+
+
 
 
 
