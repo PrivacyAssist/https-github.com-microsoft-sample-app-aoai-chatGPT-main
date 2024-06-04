@@ -27,7 +27,6 @@ jobs:
     - name: Build the Docker image
       run:         
         docker build . --file WebApp.Dockerfile --tag sampleappaoaichatgpts.azurecr.io/vsbejgam/privacychatbot:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER;
-        docker tag sampleappaoaichatgpts.azurecr.io/vsbejgam/privacychatbot:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER sampleappaoaichatgpt.azurecr.io/privacychatbot:latest;
-        docker push sampleappaoaichatgpts.azurecr.io/privacychatbot:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER;
-        docker push sampleappaoaichatgpts.azurecr.io/privacychatbot:latest;
+        docker push sampleappaoaichatgpts.azurecr.io/vsbejgam/privacychatbot:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER;
+        docker push sampleappaoaichatgpts.azurecr.io/vsbejgam/privacychatbot:latest;
       
