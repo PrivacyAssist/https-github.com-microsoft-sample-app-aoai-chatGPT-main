@@ -358,7 +358,8 @@
         }
     },
     "variables": {
-        "WebAppImageName": "DOCKER|sampleappaoaichatgpts.azurecr.io/privacychatbot:latest",
+        "WebAppImageName": "DOCKER|sampleappaoaichatgpts.azurecr.io/vsbejgam/privacychatbot:latest",
+        
         "cosmosdb_account_name": "[format('db-{0}', parameters('WebsiteName'))]",
         "cosmosdb_database_name": "db_conversation_history",
         "cosmosdb_container_name": "conversations",
