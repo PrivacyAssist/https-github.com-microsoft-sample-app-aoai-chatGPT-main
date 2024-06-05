@@ -504,6 +504,14 @@ a {
         left: -43px;
         top: 14px;
     }
+    .clearChatBroom
+    {    left: -21px;
+        top: 18px;
+    }
+    .newChatIcon
+    {
+        left: -21px;
+    }
 }
 
 @media only screen  and  (max-width: 1479px) {
@@ -604,6 +612,11 @@ a {
 .clearChatBroomNoCosmos
 {
     top:0px
+}
+.clearChatBroom
+{
+    left: -41px;
+
 }
 }
 
