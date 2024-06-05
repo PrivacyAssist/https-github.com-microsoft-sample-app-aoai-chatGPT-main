@@ -863,8 +863,8 @@ const Chat = () => {
     <Stack.Item className={styles.citationPanel} style={{float:'right'}} tabIndex={0} role="tabpanel" aria-label="Citations Panel">
         <Stack aria-label="Citations Panel Header Container" horizontal className={styles.citationPanelHeaderContainer} horizontalAlign="space-between" verticalAlign="center">
             <span aria-label="Citations" className={styles.citationPanelHeader}>Citations</span>
-            { <IconButton iconProps={{ iconName: 'Cancel' }} aria-label="Close citations panel" onClick={() => setIsCitationPanelOpen(true)} /> }
-            {/* <IconButton iconProps={{ iconName: 'Cancel' }} aria-label="Close citations panel" onClick={() => setIsCitationPanelOpen(false)} /> */}
+            { <IconButton iconProps={{ iconName: 'Cancel' }} aria-label="Close citations panel" onClick={() => setIsCitationPanelOpen(false)} /> }
+            {/* <IconButton iconProps={{ iconName: 'Cancel' }} aria-label="Close citations panel" onClick={() => setIsCitationPanelOpen(true)} /> */}
         </Stack>
         <h5 className={styles.citationPanelTitle} tabIndex={0} title={activeCitation.url && !activeCitation.url.includes("blob.core") ? activeCitation.url : activeCitation.title ?? ""} onClick={() => onViewSource(activeCitation)}>{activeCitation.title}</h5>
         <div tabIndex={0}>

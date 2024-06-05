@@ -480,6 +480,70 @@ a {
     right:10px;
 }
 
+@media only screen  and  (max-width: 1500px) {
+   
+    .chatContainerinnercontainerup
+    {
+        left: 462px;
+        top: 71px;
+    }
+    .chatEmptyStateIcon
+    {
+        top: -69px;
+        left: -217px;
+        bottom: 152px;
+        height: 60px;
+    }
+    .faqstacklefttext
+    {
+        top: -69px;
+        right: 666px;
+    }
+    .clearChatBroomNoCosmos
+    {
+        left: -43px;
+        top: 14px;
+    }
+}
+
+@media only screen  and  (max-width: 1479px) {
+    .faqstacklefttext
+    {
+        top: -69px;
+        right: 655px;
+    }
+}
+
+@media only screen  and  (max-width: 1462px) {
+    .faqstacklefttext
+    {
+        top: -69px;
+        right: 644px;
+    }
+}
+
+@media only screen  and  (max-width: 1438px) {
+    .faqstacklefttext
+    {
+        top: -69px;
+        right: 637px;
+    }
+}
+@media only screen  and  (max-width: 1422px) {
+    .faqstacklefttext
+    {
+        top: -69px;
+        right: 629px;
+    }
+}
+@media only screen  and  (max-width: 1407px) {
+    .faqstacklefttext
+    {
+        top: -69px;
+        right: 624px;
+    }
+}
+
 @media only screen  and  (max-width: 1400px) {
    
     .citationPanel
@@ -493,8 +557,11 @@ a {
     }
    .chatContainerinnercontainerup
    {
-    right: -118px;
-    bottom: 682px;
+        right: 0px;
+        bottom: 0px;
+        left: 975px;
+        top: 76px;
+    
    }
    .chatContainerinnercontainer
    {
